@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <TextView
+        android:id="@+id/tv_name_of_spell"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Метеоритный дождь (Meteor swarm)"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_level_of_spell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Уровень: "
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_of_spell" />
+    <TextView
+        android:id="@+id/tv_level_of_spell_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_name_of_spell"
+        app:layout_constraintStart_toEndOf="@+id/tv_level_of_spell" />
+
+
+    <TextView
+        android:id="@+id/tv_school_of_spell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Школа: "
+        android:textStyle="bold"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_level_of_spell" />
+    <TextView
+        android:id="@+id/tv_school_of_spell_str"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Воплощение"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_level_of_spell"
+        app:layout_constraintStart_toEndOf="@+id/tv_school_of_spell" />
+
+
+    <TextView
+        android:id="@+id/tv_time_to_use"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Время накладывания: "
+        android:textStyle="bold"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_school_of_spell" />
+    <TextView
+        android:id="@+id/tv_time_to_use_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1 действие"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/tv_time_to_use"
+        app:layout_constraintTop_toBottomOf="@id/tv_school_of_spell" />
+
+
+    <TextView
+        android:id="@+id/tv_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Дистанция: "
+        android:textStyle="bold"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_time_to_use" />
+    <TextView
+        android:id="@+id/tv_distance_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1 миля"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/tv_distance"
+        app:layout_constraintTop_toBottomOf="@id/tv_time_to_use" />
+
+
+    <TextView
+        android:id="@+id/tv_components"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Компоненты: "
+        android:textStyle="bold"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_distance" />
+    <TextView
+        android:id="@+id/tv_components_str"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="B,C"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/tv_components"
+        app:layout_constraintTop_toBottomOf="@id/tv_distance" />
+
+
+    <TextView
+        android:id="@+id/tv_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Длительность: "
+        android:textStyle="bold"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_components" />
+    <TextView
+        android:id="@+id/tv_duration_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Мгновенная"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/tv_duration"
+        app:layout_constraintTop_toBottomOf="@id/tv_components" />
+
+
+
+    <TextView
+        android:id="@+id/tv_classes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Классы: "
+        android:textStyle="bold"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_duration" />
+    <TextView
+        android:id="@+id/tv_classes_str"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Чародей, Волшебник"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/tv_classes"
+        app:layout_constraintTop_toBottomOf="@id/tv_duration" />
+
+
+    <TextView
+        android:id="@+id/tv_source"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Источник: "
+        android:textStyle="bold"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_classes" />
+
+    <TextView
+        android:id="@+id/tv_source_str"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="«Player's handbook»"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/tv_source"
+        app:layout_constraintTop_toBottomOf="@id/tv_classes" />
+
+
+
+</android.support.constraint.ConstraintLayout>
