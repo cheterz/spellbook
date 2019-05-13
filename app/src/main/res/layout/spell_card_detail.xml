@@ -78,22 +78,28 @@
         app:layout_constraintTop_toBottomOf="@id/tv_classes_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
     <TextView
         android:id="@+id/tv_description_detail"
-        app:layout_constraintTop_toBottomOf="@id/tv_source_detail"
-        android:text=" - Описание - "
-        android:textStyle="bold"
-        android:textSize="14sp"
-        android:gravity="center_horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text=" - Описание - "
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_source_detail" />
+
     <TextView
         android:id="@+id/tv_text_of_description_detail"
-        android:text="Вы указываете пальцем, и существо, причинившее вам урон, мгновенно окружается пламенем. Существо должно совершить спасбросок Ловкости. Оно получает урон огнём 2d10 при провале, или половину этого урона при успехе.
-
-На больших уровнях: Если вы накладываете это заклинание, используя ячейку 2 уровня или выше, урон увеличивается на 1d10 за каждый уровень ячейки выше первого."
-        app:layout_constraintTop_toBottomOf="@id/tv_description_detail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:scrollbars="vertical"
+        android:scrollHorizontally="false"
+        android:text="@string/long_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_description_detail" />
 
 </android.support.constraint.ConstraintLayout>
