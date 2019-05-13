@@ -1,43 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:hapticFeedbackEnabled="true">
+    android:layout_height="match_parent">
+
 
     <TextView
-        android:id="@+id/tv_name_of_spell"
+        android:id="@+id/tv_name_of_spell_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="2dp"
-        android:text="#1 Адское возмездие (Hellish rebuke)"
-        android:textSize="30sp"
+        android:textSize="24sp"
         android:textStyle="bold"
+        android:gravity="center"
+        android:text="Адское возмездие (Hellish rebuke)"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_school_of_spell"
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_level_of_spell_detail"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="2dp"
-        android:text="Школа: Воплощение"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_name_of_spell" />
-
-    <TextView
-        android:id="@+id/tv_level_of_spell"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="2dp"
         android:text="Уровень: 1"
-        android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_name_of_spell" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name_of_spell_detail" />
+    <TextView
+        android:text="Школа: Воплощение"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_level_of_spell_detail"
+        android:id="@+id/tv_school_of_spell_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/tv_school_of_spell_detail"
+        android:id="@+id/tv_time_to_use_detail"
+        android:text="Время накладывания: 1 реакция, совершаемая вами в ответ на получение урона от существа, находящегося в пределах 60 фт. от вас и видимого вами"
+        android:textStyle="bold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_distance_detail"
+        android:text="Дистанция: 60 фт."
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_time_to_use_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_components_detail"
+        android:text="Компоненты: В, С"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_distance_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_duration_detail"
+        android:text="Длительность: Мгновенная"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_components_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_classes_detail"
+        android:text="Классы: Колдун"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_duration_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_source_detail"
+        android:text="Источник: «Player's handbook»"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_classes_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_description_detail"
+        app:layout_constraintTop_toBottomOf="@id/tv_source_detail"
+        android:text=" - Описание - "
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_text_of_description_detail"
+        android:text="Вы указываете пальцем, и существо, причинившее вам урон, мгновенно окружается пламенем. Существо должно совершить спасбросок Ловкости. Оно получает урон огнём 2d10 при провале, или половину этого урона при успехе.
+
+На больших уровнях: Если вы накладываете это заклинание, используя ячейку 2 уровня или выше, урон увеличивается на 1d10 за каждый уровень ячейки выше первого."
+        app:layout_constraintTop_toBottomOf="@id/tv_description_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </android.support.constraint.ConstraintLayout>
