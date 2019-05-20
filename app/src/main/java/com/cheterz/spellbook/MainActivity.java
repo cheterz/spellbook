@@ -9,9 +9,6 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
-    RecyclerView recyclerView;
-    RecyclerView.Adapter adapter;
-    RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
