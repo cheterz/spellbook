@@ -1,5 +1,17 @@
 package com.cheterz.spellbook
 
-data class Spells(val id: Int, val name: String, val level: Int, val school: String, val distance: Double,
-                  val components: String, val duration: Double, val classOfSpell: String,
-                  val sourceOfSpell: String, val descr: String)
+import com.google.gson.annotations.SerializedName
+
+data class Spells(
+        @SerializedName("id") val id: Int,
+        @SerializedName("title") val title: String,
+        @SerializedName("level_id") val levelId: String,
+        @SerializedName("school_id") val schoolId: String,
+        @SerializedName("using_time") val usingTime: String,
+        @SerializedName("distance") val distance: String,
+        @SerializedName("components") val components: String,
+        @SerializedName("duration") val duration: String,
+        @SerializedName("classes") val classes: List<String>,
+        @SerializedName("source_id") val sourceId: String,
+        @SerializedName("description") val description: String
+)

@@ -5,5 +5,5 @@ import retrofit2.http.POST
 
 interface GetData {
     @POST("spellbook")
-    fun getData(): Observable<List<Spell>>
+    fun getData(): Observable<List<Spells>>
 }

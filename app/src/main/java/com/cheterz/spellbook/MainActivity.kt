@@ -1,14 +1,9 @@
 package com.cheterz.spellbook
 
-import android.app.FragmentTransaction
-import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.util.Log
-import android.widget.LinearLayout
-import android.widget.Toast
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
@@ -17,7 +12,10 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MyAdapter.Listener {
+    override fun onItemClick(spells: Spells) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 
     private var myAdapter: MyAdapter? = null
     private var myCompositeDisposable: CompositeDisposable? = null
@@ -34,7 +32,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerVIew() {
-        val layoutManager:RecyclerView.LayoutManager = LinearLayoutManager(this)
+        val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
         recycler_view.layoutManager = layoutManager
     }
 
@@ -45,13 +43,18 @@ class MainActivity : AppCompatActivity() {
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build().create(GetData::class.java)
 
-        myCompositeDisposable?.add(requestInterface.getData().observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
-                .subscribe(this::handleResponce))
+        myCompositeDisposable?.add(
+                requestInterface.getData()
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(this::handleResponce,Throwable:: printStackTrace)
+        )
     }
-    private fun handleResponce(spellsList: List<Spells>){
+
+    private fun handleResponce(spellsList: List<Spells>) {
         mySpellsArrayList = ArrayList(spellsList)
-        myAdapter = MyAdapter(mySpellsArrayList!!,this)
+        myAdapter = MyAdapter(mySpellsArrayList!!, this)
+        recycler_view.setHasFixedSize(true)
         recycler_view.adapter = myAdapter
     }
 
