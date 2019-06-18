@@ -7,8 +7,8 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.spell_card_item.view.*
 
 class MyAdapter(
-        private val spellsList: ArrayList<Spells>,
-        private val listener: Listener
+    private val spellsList: ArrayList<Spells>,
+    private val listener: Listener
 ) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
 
     interface Listener {
@@ -32,7 +32,7 @@ class MyAdapter(
                 listener.onItemClick(spellsList)
             }
             itemView.tv_name_of_spell.text = spellsList.title
-            itemView.tv_school_of_spell.text ="Школа: " + spellsList.schoolId
+            itemView.tv_school_of_spell.text = "Школа: " + spellsList.schoolId
             itemView.tv_level_of_spell.text = "Уровень: " + spellsList.levelId
         }
     }
