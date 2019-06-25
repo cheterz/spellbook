@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.spell_card_item.view.*
 
 class MyAdapter(
-    private val spellsList: ArrayList<Spells>,
     private val listener: Listener
 ) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+    private val spellsList: MutableList<Spells> = mutableListOf()
 
     interface Listener {
         fun onItemClick(spells: Spells)
@@ -24,6 +24,12 @@ class MyAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.spell_card_item, parent, false)
         return ViewHolder(view)
+    }
+
+    fun update(spellsList: List<Spells>) {
+        this.spellsList.clear()
+        this.spellsList.addAll(spellsList)
+        notifyDataSetChanged()
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
