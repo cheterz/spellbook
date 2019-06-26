@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.spell_card_item.view.*
 
-class MyAdapter(
+class SpellsListAdapter(
     private val listener: Listener
-) : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<SpellsListAdapter.ViewHolder>() {
     private val spellsList: MutableList<Spells> = mutableListOf()
 
     interface Listener {

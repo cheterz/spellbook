@@ -7,12 +7,12 @@ import android.support.v7.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_main.*
 
 // TODO: Делаем MVP Model - View - Presenter (ето значит что вью занимается тем что отображает данные и обрабатывает действия от пользователя)
-class MainActivity : AppCompatActivity(), MyAdapter.Listener, SpellsInterfaceView {
+class MainActivity : AppCompatActivity(), SpellsListAdapter.Listener, SpellsInterfaceView {
     override fun handleResponse(spellsList: List<Spells>) {
         myAdapter.update(spellsList)
     }
 
-    private val myAdapter: MyAdapter by lazy { MyAdapter( this) }
+    private val myAdapter: SpellsListAdapter by lazy { SpellsListAdapter( this) }
     private val presenter: SpellbookPresenter = SpellbookPresenter(this)
 
     override fun onItemClick(spells: Spells) {
