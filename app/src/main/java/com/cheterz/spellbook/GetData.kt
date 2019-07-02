@@ -6,4 +6,7 @@ import retrofit2.http.GET
 interface GetData {
     @GET("spellbook")
     fun getData(): Observable<List<Spells>>
+
+    @GET("spellbook/dictionary")
+    fun getDict(): Observable<List<Spells>>
 }

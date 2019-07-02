@@ -40,6 +40,7 @@ class SpellsListAdapter(
             itemView.tv_name_of_spell.text = spellsList.title
             itemView.tv_school_of_spell.text = "Школа: " + spellsList.schoolId
             itemView.tv_level_of_spell.text = "Уровень: " + spellsList.levelId
+            itemView.tv_source_of_spell.text = spellsList.sourceId
         }
     }
 }
