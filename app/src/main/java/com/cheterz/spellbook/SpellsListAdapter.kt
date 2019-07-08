@@ -33,14 +33,38 @@ class SpellsListAdapter(
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        var schoolName = ""
+        var sourceName = ""
+
         fun bind(spellsList: Spells, listener: Listener) {
             itemView.setOnClickListener {
                 listener.onItemClick(spellsList)
             }
+            when (spellsList.schoolId){
+                1 -> schoolName = "Воплощение"
+                2 -> schoolName = "Вызов"
+                3 -> schoolName = "Иллюзия"
+                4 -> schoolName = "Некромантия"
+                5 -> schoolName = "Ограждение"
+                6 -> schoolName = "Очарование"
+                7 -> schoolName = "Преобразование"
+                8 -> schoolName = "Прорицание"
+                else -> "Нет Школы"
+
+
+            }
+            when (spellsList.sourceId){
+                1 -> sourceName = "Player's handbook"
+                2 -> sourceName = "Princes of the Apocalypse, Xanathar's Guide to Everything"
+                3 -> sourceName = "Sword Coast Adventurer Guide"
+                5 -> sourceName = "Guildmasters' guide to Ravnica"
+                6 -> sourceName = "Homebrew"
+                7 -> sourceName = "Xanathar’s Guide to Everything"
+            }
             itemView.tv_name_of_spell.text = spellsList.title
-            itemView.tv_school_of_spell.text = "Школа: " + spellsList.schoolId
+            itemView.tv_school_of_spell.text = "Школа: " + schoolName
             itemView.tv_level_of_spell.text = "Уровень: " + spellsList.levelId
-            itemView.tv_source_of_spell.text = spellsList.sourceId
+            itemView.tv_source_of_spell.text = "Источник: " + sourceName
         }
     }
 }
