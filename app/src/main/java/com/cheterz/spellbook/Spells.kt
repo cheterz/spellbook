@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class Spells(
     @SerializedName("id") val id: Int,
     @SerializedName("title") val title: String,
-    @SerializedName("level_id") val levelId: String,
+    @SerializedName("level_id") val levelId: Int,
     @SerializedName("school_id") val schoolId: Int,
     @SerializedName("using_time") val usingTime: String,
     @SerializedName("distance") val distance: String,

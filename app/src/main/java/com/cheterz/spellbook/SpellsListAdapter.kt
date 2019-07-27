@@ -35,6 +35,7 @@ class SpellsListAdapter(
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         var schoolName = ""
         var sourceName = ""
+        var levelName = ""
 
         fun bind(spellsList: Spells, listener: Listener) {
             itemView.setOnClickListener {
@@ -61,9 +62,21 @@ class SpellsListAdapter(
                 6 -> sourceName = "Homebrew"
                 7 -> sourceName = "Xanathar’s Guide to Everything"
             }
+            when(spellsList.levelId){
+                1 -> levelName = "Заговор"
+                2 -> levelName = "Уровень: 1"
+                3 -> levelName = "Уровень: 2"
+                4 -> levelName = "Уровень: 3"
+                5 -> levelName = "Уровень: 4"
+                6 -> levelName = "Уровень: 5"
+                7 -> levelName = "Уровень: 6"
+                8 -> levelName = "Уровень: 7"
+                9 -> levelName = "Уровень: 8"
+                10 -> levelName = "Уровень: 9"
+            }
             itemView.tv_name_of_spell.text = spellsList.title
             itemView.tv_school_of_spell.text = "Школа: " + schoolName
-            itemView.tv_level_of_spell.text = "Уровень: " + spellsList.levelId
+            itemView.tv_level_of_spell.text = levelName
             itemView.tv_source_of_spell.text = "Источник: " + sourceName
         }
     }
